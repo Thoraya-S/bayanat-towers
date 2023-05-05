@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";  
+@import 'ag-grid-community/styles/ag-grid.css'; // Core grid CSS, always needed
+@import 'ag-grid-community/styles/ag-theme-alpine.css'; // Optional theme CSS
+
+body{
+    background: #eaeaea;
+}
+.inner-wrapper{
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    
+}
+header{
+    background: rgb(98, 98, 189);
+    padding: 60px;
+    text-align: center;
+    
+    a{
+        color: #fff !important;
+        font-size: 100px;
+        
+      //  content: center !important;
+    };
+    b{
+        color: #fff !important;
+        font-size: 20px;
+        font-style: oblique;
+        font-family: "Sofia", sans-serif;
+    }
+    // .center {
+    //     text-align: center
+    //    }
+}
+
+.ag-header-cell-label {
+    justify-content: center !important;
+  }
+
+  .ag-cell {
+    text-align: center !important;
+  }
