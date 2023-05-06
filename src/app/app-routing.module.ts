@@ -5,7 +5,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TowersDetailsComponent } from './towers-details/towers-details.component';
 
 const routes: Routes = [
-  //{path: '', component: DashboardComponent},
   {path: "towers-details", component: TowersDetailsComponent},
   {path: "dashboard", component: DashboardComponent},
   {path: "chart", component: ChartComponent},

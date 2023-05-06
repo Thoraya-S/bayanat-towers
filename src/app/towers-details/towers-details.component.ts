@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AgChartOptions } from 'ag-charts-community';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, DomLayoutType, GridOptions } from 'ag-grid-community';
 import { TowersService } from '../towers.service';
@@ -17,14 +16,14 @@ export class TowersDetailsComponent implements OnInit {
   public towersData: any = null;
   public domLayout: DomLayoutType = 'autoHeight';
   
-  columnDefs = [{ field: "tower_id", resizable: true, width:112}, 
-  {field: "operator", resizable: true ,width:118 }, 
-  { field: "address", resizable: true,width:294}, 
-  { field: "height", resizable: true ,width:106},
-  { field: "tower_type", resizable: true ,width:126},
-  { field: "latitude", resizable: true,width:170},
-  { field: "longitude",resizable: true,width:170 },
-  { field: "technology" ,resizable: true,width:200}];
+  columnDefs = [{headerName:"Tower Id", field: "tower_id", resizable: true, width:112}, 
+  {headerName:"Operator",field: "operator", resizable: true ,width:118 }, 
+  {headerName:"Address", field: "address", resizable: true,width:294}, 
+  {headerName:"Height", field: "height", resizable: true ,width:106},
+  {headerName:"Tower Type",field: "tower_type", resizable: true ,width:126},
+  {headerName:"Latitude", field: "latitude", resizable: true,width:170},
+  {headerName:"Longitude", field: "longitude",resizable: true,width:170 },
+  {headerName:"Technology", field: "technology" ,resizable: true,width:200}];
 
   public paginationPageSize = 10;
 
@@ -34,10 +33,6 @@ export class TowersDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.towersService.getAllTowersData().subscribe(data => this.towersData = data);
-   // throw new Error('Method not implemented.');
   }
 
-
-
-  
 }

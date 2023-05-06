@@ -16,43 +16,14 @@ export class ChartComponent implements OnInit {
   threeG : number = 0;
   forthG: number = 0;
   fiveG: number = 0;
-  numCountData:any =[];
+  
   typeOfTech: any = [];
-   newArray: any = [];
-  ffff: any =  [
-    {technology: '2G',number: 50,},
-    {technology: '3G',number: 70,},
-    {technology: '4G',number: 60,},
-    {technology: '5G',number: 80,},
-  ]
-
   chartdata: any;
   labeldata: any[] = [];
-  realdata: any[] = [];
-  colordata: any[] = [];
 
-  constructor(private towersService : TowersService){
-    //this.getChartData();
-    // this.options = {data:this.ffff,
-    //       series: [
-    //         {
-    //           type: 'column',
-    //           xKey: 'technology',
-    //           yKey: 'number',
-    //           yName: 'Technology',
-    //         },
-    //       ],
-    //       tooltip: {
-    //         //class: 'my-tooltip',
-    //       },
-    //     };
-    //this.options = this.setChartData();
-  }
+  constructor(private towersService : TowersService){}
   ngOnInit(): void {
     this.getChartData();
-    
-    
-   // throw new Error('Method not implemented.');
   }
 
   renderChart(labeldata:any,maindata:any) {
@@ -92,12 +63,10 @@ export class ChartComponent implements OnInit {
   getChartData () {
     this.towersService.getAllTowersData().subscribe(res => {
       this.towers = res;
-      console.log("this.towers::::",this.towers)
       let numData=[];
       let typeTech:any = [];
       this.towers.forEach(ele => {
       let type = ele['technology']
-
         switch(type){
           case "2G":
             this.twoG += 1
@@ -116,12 +85,8 @@ export class ChartComponent implements OnInit {
       })
       this.typeOfTech = typeTech;
       this.typeOfTech.cities = [...new Set(this.typeOfTech)];
-      this.newArray= this.typeOfTech.cities.sort();
-      console.log("KKKKKKKKKKK", this.newArray)
-      this.labeldata = this.newArray;
-      numData.push(this.twoG, this.threeG, this.forthG,this.fiveG);
-      this.chartdata = numData;
-      console.log(numData)
+      this.labeldata= this.typeOfTech.cities.sort();
+      this.chartdata = numData.push(this.twoG, this.threeG, this.forthG,this.fiveG);
       this.renderChart(this.labeldata,numData);
     })
   }

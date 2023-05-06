@@ -8,12 +8,6 @@ import { TowersDetailsComponent } from './towers-details/towers-details.componen
 import { ChartComponent } from './chart/chart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';  
-// import { AgGridModule } from 'ag-grid-angular';
-// import { ImageFormatterComponent } from '../shared/gridComponents/cell-image-format';
-// import { ImageFormatterComponentR } from '../shared/gridComponents/cell-image-formatR';
-
-// import { GridCellEditorComponent } from '../shared/gridComponents/cell-editor';
-import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/compiler';
 import { AgGridModule } from 'ag-grid-angular';
 import { AgChartsAngularModule } from 'ag-charts-angular';
 
